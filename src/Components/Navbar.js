@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useCart } from "react-use-cart";
 
 export const Navbar = () => {
   const NavLinkStyles = ({ isActive }) => {
@@ -9,6 +10,8 @@ export const Navbar = () => {
       textDecoration: isActive ? "underline" : "none",
     };
   };
+
+  const {isEmpty, totalItems} = useCart();
   return (
     <>
       <header className="header">
@@ -32,8 +35,8 @@ export const Navbar = () => {
               <li className="nav-item active">
                 <NavLink
                   className="nav-link text-uppercase"
-                  style={NavLinkStyles}
                   to="/"
+                  activeClassName="active"
                 >
                   Home
                 </NavLink>
@@ -50,9 +53,11 @@ export const Navbar = () => {
             </ul>
           </div>
           <div>
-            <NavLink to="/cart" style={NavLinkStyles}>
-              <i class="bi bi-cart my-2 my-sm-0 mx-3"></i>
-              <h5>Cart</h5>
+            <NavLink to="/cart" style={NavLinkStyles}
+            className="d-flex align-items-center">
+              <i className="bi bi-cart my-2 my-sm-0 mx-3"></i>
+              {!isEmpty && <span style={{position:"relative", left:"-29px", top:"-18px"}}>{totalItems}</span>}
+              <span style={{marginLeft:!isEmpty? '-13px': '-10px'}}>Cart</span>
             </NavLink>
           </div>
           <form className="form-inline my-2 my-lg-0">
