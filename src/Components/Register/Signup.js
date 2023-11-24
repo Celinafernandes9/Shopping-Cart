@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,  useNavigate} from "react-router-dom";
 
 export const Signup = () => {
     const [values, setValues] = useState({
@@ -19,6 +19,9 @@ export const Signup = () => {
           [name]: value
         });
       };
+
+      
+const navigate =useNavigate();
 
       const click = (e) => {
         e.preventDefault();
@@ -44,7 +47,7 @@ export const Signup = () => {
         }
         else{
            alert("form submitted successfully");
-    
+           navigate('/login');
            localStorage.setItem("user", JSON.stringify([...data, values]));
         } 
       }
