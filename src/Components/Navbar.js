@@ -36,7 +36,7 @@ export const Navbar = () => {
                 <NavLink
                   className="nav-link text-uppercase"
                   to="/"
-                  activeClassName="active"
+                  style={NavLinkStyles}
                 >
                   Home
                 </NavLink>
