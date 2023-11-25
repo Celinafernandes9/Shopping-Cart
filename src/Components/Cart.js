@@ -13,8 +13,8 @@ export const Cart = () => {
 
   return (
     <>
-      <div className="container py-4 mt-3">
-        <h2 className="my-2 text-center">
+      <div className="container py-5 mt-4">
+        <h2 className="my-3 text-center">
           {isEmpty ? "Your Cart is Empty" : "Cart"}
         </h2>
         <div className="row justify-content-center">
