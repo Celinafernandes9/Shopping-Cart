@@ -31,7 +31,7 @@ export const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item active">
                 <NavLink
                   className="nav-link text-uppercase"
@@ -51,8 +51,8 @@ export const Navbar = () => {
                 </NavLink>
               </li>
             </ul>
-          </div>
-          <div>
+          
+          <div className="d-flex">
             <NavLink to="/cart" style={NavLinkStyles}
             className="d-flex align-items-center">
               <i className="bi bi-cart my-2 my-sm-0 mx-3"></i>
@@ -70,6 +70,7 @@ export const Navbar = () => {
               </NavLink>
             </button>
           </form>
+          </div>
         </nav>
       </header>
     </>
